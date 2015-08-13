@@ -17,7 +17,7 @@ function minus(a, b) {
 
 //find division
 function divide(a , b){
-    return a / b ;
+    return (a / b).toFixed(4) ;
 }
 
 //find squre root 
