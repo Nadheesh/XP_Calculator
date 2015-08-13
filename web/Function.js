@@ -27,7 +27,7 @@ function squareRoot ( a ){
 
 //find the square
 function square(a){
-        return a^2;
+    return powerTo(a,2);
 }
 
 function powerTo(a,b){
