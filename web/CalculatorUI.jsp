@@ -101,14 +101,15 @@
                 <input id="btnequals" type="Button" value="  =  " onclick="Operation('=')">
                 </tr>
                 <tr>
-                <input id="btnsquare" type="Button" value="  0  " onclick="Square(0)">
-                <input id="btnpower" type="Button" value="   .  " onclick="Power()">      
-                <input id="btnsqrt" type="Button" value="   /   " onclick="Root('/')">
+                <input id="btnsquare" type="Button" value="  0  " onclick="Operation('2')">
+                <input id="btnpower" type="Button" value="   .  " onclick="Operation('P')">      
+                <input id="btnsqrt" type="Button" value="   /   " onclick="Operation('R')">
   
                 </tr>
             </table>
 
         </FORM>
+        <script src="Function.js"></script>
         <script>
             var FKeyPad = document.Keypad;
             var Accumulate = 0;
@@ -134,13 +135,19 @@
                 {
                     FlagNewNum = true;
                     if ('+' == PendingOp)
-                        Accumulate += parseFloat(Readout);
+                        Accumulate=add(Accumulate,parseFloat(Readout));
                     else if ('-' == PendingOp)
-                        Accumulate -= parseFloat(Readout);
+                        Accumulate=minus(Accumulate,parseFloat(Readout));
                     else if ('/' == PendingOp)
-                        Accumulate /= parseFloat(Readout);
+                        Accumulate=divide(Accumulate,parseFloat(Readout));
                     else if ('*' == PendingOp)
-                        Accumulate *= parseFloat(Readout);
+                       Accumulate=mult(Accumulate,parseFloat(Readout));
+                   else if ('2' == PendingOp)
+                        Accumulate=square(parseFloat(Readout));
+                    else if ('P' == PendingOp)
+                        Accumulate=powerTo(Accumulate,parseFloat(Readout));
+                    else if ('R' == PendingOp)
+                       Accumulate=squareRoot(parseFloat(Readout));
                     else
                         Accumulate = parseFloat(Readout);
                     FKeyPad.ReadOut.value = Accumulate;
