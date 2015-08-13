@@ -97,7 +97,7 @@
             <input id="btn0" type="Button" value="  0  " onclick="NumPressed(0)">
             <input id="btndecimal" type="Button" value="   .  " onclick="Decimal()">      
             <input id="btndivide" type="Button" value="   /   " onclick="Operation('/')">
-            <input id="about" type="Button" value="About" onclick="myFunction()"></br>
+            <input id="about" type="Button" value="Extra"></br>
             <input id="btnequals" type="Button" value="  =  " onclick="Operation('=')">
         </FORM>
         <script>
