@@ -5,7 +5,16 @@
  */
 
 
-
+function add(a, b) {
+    return a + b;
+}
 function minus(a, b) {
     return a - b;
 }
+function powerTo(a,b){
+    return Math.pow(a,b);
+}
+function mult(a,b){
+    return a*b;
+}
+
