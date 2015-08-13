@@ -5,7 +5,12 @@
  */
 
 
+
 //find minus
+function add(a, b) {
+    return a + b;
+}
+
 function minus(a, b) {
     return a - b;
 }
@@ -24,3 +29,12 @@ function squareRoot ( a ){
 function square(a){
         return a^2;
 }
+
+function powerTo(a,b){
+    return Math.pow(a,b);
+}
+function mult(a,b){
+    return a*b;
+}
+
+
