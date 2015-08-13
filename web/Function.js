@@ -10,7 +10,7 @@
 function add(a, b) {
     return a + b;
 }
-
+//function minus
 function minus(a, b) {
     return a - b;
 }
@@ -29,10 +29,11 @@ function squareRoot ( a ){
 function square(a){
         return a^2;
 }
-
+//find powerTo
 function powerTo(a,b){
     return Math.pow(a,b);
 }
+//function mult
 function mult(a,b){
     return a*b;
 }

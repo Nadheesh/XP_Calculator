@@ -6,6 +6,9 @@
 
 
 // testing for minus 
+QUnit.test("Testing Add function", function(assert) {
+  assert.equal(8, add(5, 3), "5 + 3 is 8");
+});
 QUnit.test("Testing Minus function", function(assert) {
   assert.equal(2, minus(5, 3), "5 - 3 is 2");
 });
@@ -15,14 +18,14 @@ QUnit.test("Testing powerTo function", function(assert) {
 QUnit.test("Testing Multiplication function", function(assert) {
   assert.equal(35, mult(5, 7), "5*7 is 35");
 });
-QUnit.test("Testing Minus function with failing", function(assert) {
-  assert.equal(1, minus(3, 2), "3 - 2 is 2");
+QUnit.test("Testing Add function with failing", function(assert) {
+  assert.equal(2, add(3, 2), "3 - 2 is 2");
 });
 QUnit.test("Testing powerTo function with failing", function(assert) {
-  assert.equal(10, minus(3, 2), "3 ** 2 is 10");
+  assert.equal(10, powerTo(3, 2), "3 ** 2 is 10");
 });
 QUnit.test("Testing Multiplication function with failing", function(assert) {
-  assert.equal(7, minus(3, 2), "3 * 2 is 7");
+  assert.equal(7, mult(3, 2), "3 * 2 is 7");
 });
 
 QUnit.test("Testing Minus function with failing", function(assert) {
