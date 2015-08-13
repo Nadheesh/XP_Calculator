@@ -5,6 +5,7 @@
  */
 
 
+// testing for minus 
 QUnit.test("Testing Minus function", function(assert) {
   assert.equal(2, minus(5, 3), "5 - 3 is 2");
 });
@@ -13,10 +14,31 @@ QUnit.test("Testing Minus function with failing", function(assert) {
   assert.equal(1, minus(2, 2), "2 - 2 is 1");
 });
 
+
+//testing for the division
 QUnit.test("Testing Divide function", function(assert) {
-  assert.equal(2.5, divide()(5, 2), "5 / 2 is 2.5");
+  assert.equal(2.5, divide(5, 2), "5 / 2 is 2.5");
 });
 
 QUnit.test("Testing Divide function with failing", function(assert) {
-  assert.equal(1, divide(7/ 3), "7 / 3 is 1");
+  assert.equal(1, divide(7, 3) , "7 / 3 is 1");
+});
+
+//testing for the square
+QUnit.test("Testing Square function", function(assert) {
+  assert.equal(25, square(5), "5^2 is 25");
+});
+
+QUnit.test("Testing Square function with failing", function(assert) {
+  assert.equal(4, square(3) , "3^2 is 4");
+});
+
+
+//tesdting for the square root
+QUnit.test("Testing SquareRoot function", function(assert) {
+  assert.equal(2, squareRoot(4), "root of 4 is 2");
+});
+
+QUnit.test("Testing SquareRoot function with failing", function(assert) {
+  assert.equal(1, divide(7) , "root of 7 is 1");
 });
