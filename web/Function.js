@@ -10,14 +10,14 @@
 function add(a, b) {
     return a + b;
 }
-
+//function minus
 function minus(a, b) {
     return a - b;
 }
 
 //find division
 function divide(a , b){
-    return a / b ;
+    return (a / b).toFixed(4) ;
 }
 
 //find squre root 
@@ -29,11 +29,11 @@ function squareRoot ( a ){
 function square(a){
     return powerTo(a,2);
 }
-
+//find powerTo
 function powerTo(a,b){
     return Math.pow(a,b);
 }
-
+//function mult
 function mult(a,b){
     return a*b;
 }
