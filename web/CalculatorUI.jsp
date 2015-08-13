@@ -24,13 +24,13 @@
                 height: 75px; 
             }
             input[type="button"]{
-            width: 184px;
+                width: 184px;
             }
             #btnC{
-                    width:372.7px;
+                width:372.7px;
             }
             #btn0{
-                    width:374.7px;
+                width:374.7px;
             }
             #btn0,#btndecimal,#btndivide {
                 margin-right: 0.1px;
@@ -93,21 +93,30 @@
                     <td><input id="btnmultiply" type="Button" value="  *  " onclick="Operation('*')"></td>
                     <td><input id="btnminus" type="Button" value="   -   " onclick="Operation('-')"></td>
                 </tr>
+                <tr>
+                <input id="btn0" type="Button" value="  0  " onclick="NumPressed(0)">
+                <input id="btndecimal" type="Button" value="   .  " onclick="Decimal()">      
+                <input id="btndivide" type="Button" value="   /   " onclick="Operation('/')">
+                <input id="about" type="Button" value="Extra"></br>
+                <input id="btnequals" type="Button" value="  =  " onclick="Operation('=')">
+                </tr>
+                <tr>
+                <input id="btnsquare" type="Button" value="  0  " onclick="Square(0)">
+                <input id="btnpower" type="Button" value="   .  " onclick="Power()">      
+                <input id="btnsqrt" type="Button" value="   /   " onclick="Root('/')">
+  
+                </tr>
             </table>
-            <input id="btn0" type="Button" value="  0  " onclick="NumPressed(0)">
-            <input id="btndecimal" type="Button" value="   .  " onclick="Decimal()">      
-            <input id="btndivide" type="Button" value="   /   " onclick="Operation('/')">
-            <input id="about" type="Button" value="Extra"></br>
-            <input id="btnequals" type="Button" value="  =  " onclick="Operation('=')">
+
         </FORM>
         <script>
             var FKeyPad = document.Keypad;
             var Accumulate = 0;
             var FlagNewNum = false;
             var PendingOp = "";
-            function NumPressed (Num) {
+            function NumPressed(Num) {
                 if (FlagNewNum) {
-                    FKeyPad.ReadOut.value  = Num;
+                    FKeyPad.ReadOut.value = Num;
                     FlagNewNum = false;
                 }
                 else {
@@ -117,19 +126,20 @@
                         FKeyPad.ReadOut.value += Num;
                 }
             }
-            function Operation (Op) {
+            function Operation(Op) {
                 var Readout = FKeyPad.ReadOut.value;
-                if (FlagNewNum && PendingOp != "=");
+                if (FlagNewNum && PendingOp != "=")
+                    ;
                 else
                 {
                     FlagNewNum = true;
-                    if ( '+' == PendingOp )
+                    if ('+' == PendingOp)
                         Accumulate += parseFloat(Readout);
-                    else if ( '-' == PendingOp )
+                    else if ('-' == PendingOp)
                         Accumulate -= parseFloat(Readout);
-                    else if ( '/' == PendingOp )
+                    else if ('/' == PendingOp)
                         Accumulate /= parseFloat(Readout);
-                    else if ( '*' == PendingOp )
+                    else if ('*' == PendingOp)
                         Accumulate *= parseFloat(Readout);
                     else
                         Accumulate = parseFloat(Readout);
@@ -137,7 +147,7 @@
                     PendingOp = Op;
                 }
             }
-            function Decimal () {
+            function Decimal() {
                 var curReadOut = FKeyPad.ReadOut.value;
                 if (FlagNewNum) {
                     curReadOut = "0.";
@@ -150,19 +160,19 @@
                 }
                 FKeyPad.ReadOut.value = curReadOut;
             }
-            function ClearEntry () {
+            function ClearEntry() {
                 FKeyPad.ReadOut.value = "0";
                 FlagNewNum = true;
             }
-            function Clear () {
+            function Clear() {
                 Accumulate = 0;
                 PendingOp = "";
                 ClearEntry();
             }
-            function Neg () {
+            function Neg() {
                 FKeyPad.ReadOut.value = parseFloat(FKeyPad.ReadOut.value) * -1;
             }
-            function Percent () {
+            function Percent() {
                 FKeyPad.ReadOut.value = (parseFloat(FKeyPad.ReadOut.value) / 100) * parseFloat(Accumulate);
             }
         </script>
